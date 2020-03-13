@@ -3,7 +3,7 @@ const URL_MONGO = "mongodb+srv://dapiedra:danielpa@cluster0-c8vti.gcp.mongodb.ne
 
 mongoose.connect(URL_MONGO,{useNewUrlParser:true},function(err) {
     if (!err){
-        console.log('Conexion exitosa')
+        console.log('Conexion exitosa super')
     }
 })
 
