@@ -7,4 +7,22 @@ mongoose.connect(URL_MONGO,{useNewUrlParser:true},function(err) {
     }
 })
 
-ingreso de rama
+const Schema = mongoose.Schema
+
+const MascotaShema = new Schema({
+    nombre: String,
+    raza: {
+        type: String,
+        enum: [ "Beagle", "Bloodhound", "Bull Terrier", "Bulldog americano", "Collie","Dálmata","Dachshund", "Dobermann","Fox Terrier","Husky Siberiano","Labrador","Maltés","Pastor alemán","Pekinés","Pinscher miniatura","Pitbull","Pug","Rottweiler","Schnauzer","Shih Tzu", "Terrier"],
+        required: true,
+        default: "CasiZagua",
+    },
+    edad: Number,
+    sexo: String,
+    vacunas: {
+
+    },
+    peso: Number,
+    bio: String,
+    refugio: String,
+})
