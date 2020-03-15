@@ -9,7 +9,7 @@ mongoose.connect(URL_MONGO,{useNewUrlParser:true},function(err) {
 
 const Schema = mongoose.Schema
 
-const MascotaShema = new Schema({
+const MascotaSchema = new Schema({
     nombre: String,
     raza: {
         type: String,
@@ -18,11 +18,20 @@ const MascotaShema = new Schema({
         default: "CasiZagua",
     },
     edad: Number,
-    sexo: String,
-    vacunas: {
-
+    sexo: {
+        type: String,
+        enum: ["F","M","O"],
+        required: true
     },
+    vacunas: {
+        type: String,
+        required: true,
+        },
     peso: Number,
-    bio: String,
-    refugio: String,
-})
+    bio: String, // agregar al server
+    refugio: String, // agregar al server
+},{timestamps:true})
+
+const Mascota = mongoose.model("Mascota", MascotaSchema)
+
+module.exports = {Mascota}
