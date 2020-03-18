@@ -17,19 +17,27 @@ const MascotaSchema = new Schema({
         required: true,
         default: "CasiZagua",
     },
-    edad: Number,
+    edad: {
+        type: Number,
+        date: Date,
+        required: true,
+    },
     sexo: {
         type: String,
         enum: ["F","M","O"],
         required: true
     },
-    vacunas: {
-        type: String,
-        required: true,
+    vacunas: [{
+        nombre: String,
+        date: {
+            type: Date,
+            default: Date.now,
+            required: true,
         },
+    }],
     peso: Number,
-    bio: String, // agregar al server
-    refugio: String, // agregar al server
+    bio: String, // agregar a server
+    refugio: String, // agregar a server
 },{timestamps:true})
 
 const Mascota = mongoose.model("Mascota", MascotaSchema)

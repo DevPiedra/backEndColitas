@@ -12,9 +12,9 @@ const Schema = mongoose.Schema
 const RefugioShema = new Schema({
     nombre: String,
     ubicacion: String,
-    telefono: Number, // agregar al server
-    bio: String, // agregar al server
-    redesSociales: String, // agregar al server
+    telefono: Number, // agregar a server
+    bio: String, // agregar a server
+    redesSociales: String, // agregar a server
 },{timestamps:true})
 
 const Refugio = mongoose.model("Refugio", RefugioSchema)

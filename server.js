@@ -1,7 +1,7 @@
 const express = require("express")
 const bodyParser = require("body-parser")
 const { Mascota } = require("./Mascotas")
-const { Refugio } = require("./refugios")
+const { Refugio } = require("./Refugios")
 const PORT = 3000
 const app = express()
 
@@ -57,7 +57,7 @@ app.get("/mascota/:id",function (req,res){
 
 app.put("/update/mascotas/:id", function(req, res){
     const { id } = req.params
-    Mascoya.findByIdAndUpdate(id, {$set: req.body},{ new: true })
+    Mascota.findByIdAndUpdate(id, {$set: req.body},{ new: true })
     .exec()
     .then(function(mascota){
         res.send(mascota)
