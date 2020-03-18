@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const Schema = mongoose.Schema
 
-const RefugioShema = new Schema(
+const RefugioSchema = new Schema(
   {
     nombre: String,
     ubicacion: String,
@@ -13,4 +13,4 @@ const RefugioShema = new Schema(
   { timestamps: true }
 )
 
-module.exports = { RefugioShema }
+module.exports = { RefugioSchema }
