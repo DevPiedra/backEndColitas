@@ -1,0 +1,6 @@
+.navbar {
+    background-color: rgba(52, 58, 64,0.8) !important;
+}
+div.carousel-inner img{
+    max-height: 50%;
+}

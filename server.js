@@ -11,14 +11,16 @@ app.use(bodyParser.json())
 //Create end-points CRUD to "mascotas"
 //Create
 app.post('/create/mascota', function(req, res) {
-    const { nombre, raza, edad, sexo, vacunas, peso } = req.body
+    const { nombre, raza, edad, sexo, vacunas, peso, bio, refugio } = req.body
     const nuevaMascota = Mascota({
     nombre,
     raza,
     edad,
     sexo,
     vacunas,
-    peso
+    peso,
+    bio,
+    refugio,
     })
     nuevaMascota.save(function(err, mascota) {
     if (err) {
@@ -72,7 +74,7 @@ app.delete('/mascota/delete/:id', function(req, res) {
     Mascota.findOneAndDelete(id)
     .exec()
     .then(function(mascota) {
-        res.send(`Se elimino la mascota con el id ${id} correctamente`)
+        res.send(`La mascota con el id ${id} ya no esta en la base de datos`)
     })
     .catch(function(error) {
         res.send
@@ -82,11 +84,13 @@ app.delete('/mascota/delete/:id', function(req, res) {
 //Create end-points CRUD to "refugios"
 //Create refugio
 app.post('/create/refugio', function(req, res) {
-    const { nombre, ubicacion, contacto } = req.body
+    const { nombre, ubicacion, telefono, bio, redesSociales } = req.body
     const nuevoRefugio = Refugio({
     nombre,
     ubicacion,
-    contacto
+    telefono,
+    bio,
+    redesSociales,
     })
     nuevoRefugio.save(function(err, refugio) {
     if (err) {
@@ -109,7 +113,7 @@ app.get('/all/refugio/', function(req, res) {
     })
 })
 
-//Read  by id Mascotas
+//Read  by id refugios
 app.get('/refugio/:id', function(req, res) {
     const { id } = req.params
     Refugio.findById(id)
@@ -141,7 +145,7 @@ app.delete('/delete/refugio/:id', function(req, res) {
     Refugio.findOneAndDelete(id)
     .exec()
     .then(function(Refugio) {
-        res.send(`Se elimino el refugio con el id ${id}`)
+        res.send(`El refugio con el id ${id} ya no es parte de nuestra Comunidad`)
     })
     .catch(function(error) {
         res.send

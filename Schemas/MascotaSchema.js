@@ -54,8 +54,8 @@ const MascotaSchema = new Schema(
       }
     ],
     peso: Number,
-    bio: String, // agregar a server
-    refugio: String // agregar a server
+    bio: String,
+    refugio: String
   },
   { timestamps: true }
 )
