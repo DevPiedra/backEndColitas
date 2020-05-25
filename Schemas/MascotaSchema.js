@@ -13,28 +13,29 @@ const MascotaSchema = new Schema(
         'Bull Terrier',
         'Bulldog americano',
         'Collie',
-        'Dálmata',
+        'Dalmata',
         'Dachshund',
         'Dobermann',
         'Fox Terrier',
         'Husky Siberiano',
         'Labrador',
-        'Maltés',
-        'Pastor alemán',
-        'Pekinés',
+        'Maltes',
+        'Pastor aleman',
+        'Pekines',
         'Pinscher miniatura',
         'Pitbull',
         'Pug',
         'Rottweiler',
         'Schnauzer',
         'Shih Tzu',
-        'Terrier'
+        'Terrier',
+        'Zagua'
       ],
       required: true,
-      default: 'CasiZagua'
     },
     edad: {
       type: Number,
+      // Como convertir agregar años, meses dias!
       date: Date,
       required: true
     },
@@ -43,16 +44,15 @@ const MascotaSchema = new Schema(
       enum: ['F', 'M', 'O'],
       required: true
     },
-    vacunas: [
-      {
+    vacunas: {
         nombre: String,
-        date: {
-          type: Date,
-          default: Date.now,
-          required: true
-        }
-      }
-    ],
+        // Falta mejorar el tipado de fecha
+        // date: {
+        //   type: Date,
+        //   default: Date.now,
+        //   required: false
+        // }
+    },
     peso: Number,
     bio: String,
     refugio: String
