@@ -57,7 +57,7 @@ app.get('/mascota/:id', function(req, res) {
 
 app.put('/update/mascotas/:id', function(req, res) {
     const { id } = req.params
-    Mascota.useFindAndModify(id, { $set: req.body }, { new: true })
+    Mascota.findByIdAndUpdate(id, { $set: req.body }, { new: true })
     .exec()
     .then(function(mascota) {
         res.send(mascota)
@@ -71,7 +71,7 @@ app.put('/update/mascotas/:id', function(req, res) {
 
 app.delete('/mascota/delete/:id', function(req, res) {
     const { id } = req.params
-    Mascota.useFindAndModify(id)
+    Mascota.findOneAndDelete(id)
     .exec()
     .then(function(mascota) {
         res.send(`La mascota con el id ${id} ya no esta en la base de datos`)
@@ -129,7 +129,7 @@ app.get('/refugio/:id', function(req, res) {
 //Update refugio
 app.put('/update/refugio/:id', function(req, res) {
     const { id } = req.params
-    Refugio.useFindAndModify(id, { $set: req.body }, { new: true })
+    Refugio.findByIdAndUpdate(id, { $set: req.body }, { new: true })
     .exec()
     .then(function(Refugio) {
         res.send(Refugio)
@@ -142,7 +142,7 @@ app.put('/update/refugio/:id', function(req, res) {
 //Delete refugio
 app.delete('/delete/refugio/:id', function(req, res) {
     const { id } = req.params
-    Refugio.useFindAndModify(id)
+    Refugio.findOneAndDelete(id)
     .exec()
     .then(function(Refugio) {
         res.send(`El refugio con el id ${id} ya no es parte de nuestra Comunidad`)
