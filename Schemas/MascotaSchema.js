@@ -41,7 +41,7 @@ const MascotaSchema = new Schema(
     },
     sexo: {
       type: String,
-      enum: ['F', 'M', 'O'],
+      enum: ['M', 'H'],
       required: true
     },
     vacunas: {
