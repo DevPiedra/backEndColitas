@@ -18,10 +18,10 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DrRockStone/ProyectoC.git"
+    "url": "git+https://github.com/DevPiedra/ProyectoC.git"
   },
   "bugs": {
-    "url": "https://github.com/DrRockStone/ProyectoC/issues"
+    "url": "https://github.com/DevPiedra/ProyectoC/issues"
   },
-  "homepage": "https://github.com/DrRockStone/ProyectoC#readme"
+  "homepage": "https://github.com/DevPiedra/ProyectoC#readme"
 }

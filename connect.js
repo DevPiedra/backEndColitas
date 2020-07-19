@@ -1,6 +1,5 @@
 const mongoose = require('mongoose')
-const URL_MONGO =
-  'mongodb+srv://dapiedra:danielpa@cluster0-c8vti.gcp.mongodb.net/test?retryWrites=true&w=majority'
+const URL_MONGO = 'mongodb+srv://admin:admin07@cluster0.wg2v9.azure.mongodb.net/colitasdb?retryWrites=true&w=majority'
 const { Mascota } = require('./Models/MascotaModel')
 const { Refugio } = require('./Models/RefugioModel')
 
